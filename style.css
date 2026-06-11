@@ -1,24 +1,46 @@
 body {
-    background: linear-gradient(135deg, #74ebd5, #9face6);
     font-family: Arial;
     text-align: center;
-    margin-top: 100px;
-}
-
-h1 {
-    font-size: 40px;
-    color: white;
-}
-
-p {
-    font-size: 18px;
-    color: white;
+    margin: 0;
+    padding-top: 100px;
+    transition: 0.3s;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    color: black;
 }
 
 .container {
     background: white;
-    padding: 30px;
     width: 300px;
     margin: auto;
+    padding: 30px;
     border-radius: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: black;
+    color: white;
+}
+
+.dark-mode .container {
+    background: #222;
+}
+
+.dark-mode .btn {
+    background: white;
+    color: black;
 }
