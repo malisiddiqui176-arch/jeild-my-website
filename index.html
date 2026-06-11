@@ -1,36 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Study Academy</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
 <nav class="navbar">
     <h2>📘 Study Academy</h2>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Courses</a></li>
-        <li><a href="#">Notes</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
 </nav>
 
 <div class="hero">
 
-    <h1>Welcome to Study Academy 📚</h1>
-    <p>Learn HTML, CSS & JavaScript easily 🚀</p>
+    <h1>Study Academy 📚</h1>
 
-    <button onclick="toggleDarkMode()">Toggle Dark Mode 🌙</button>
+    <input type="text" id="searchBox" placeholder="Search a topic...">
+
+    <button onclick="clearSearch()">Delete Search 🗑️</button>
+
+    <br><br>
+
+    <button onclick="toggleDarkMode()">Dark Mode On/Off 🌙</button>
+
+    <p>Learn anything related to study and education.</p>
 
 </div>
+
+<footer>
+    <p>Thank You for Visiting 📖</p>
+</footer>
 
 <script>
 function toggleDarkMode() {
     document.body.classList.toggle("dark");
 }
-</script>
 
-</body>
-</html>
+function clearSearch() {
+    document.getElementById("searchBox").value = "";
+}
+</script>
