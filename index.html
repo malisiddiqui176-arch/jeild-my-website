@@ -2,11 +2,22 @@
 <html>
 <head>
     <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<button onclick="toggleDarkMode()" class="btn">
+  Toggle Dark Mode 🌙
+</button>
+
 <h1>Hello World 🌐</h1>
 <p>My website is working now</p>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
+</script>
 
 </body>
 </html>
