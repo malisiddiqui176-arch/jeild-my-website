@@ -7,7 +7,6 @@
 
 <body>
 
-<!-- TOP BAR -->
 <header>
     <h2>🎓 Skill Academy Pro</h2>
 
@@ -18,18 +17,15 @@
     </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <h1>Learn Computer Skills Online 🚀</h1>
-    <p>Become a Developer | Designer | Programmer</p>
+    <p>HTML | CSS | JavaScript | Python | Cyber Security</p>
 </section>
 
-<!-- COURSES -->
 <section class="courses">
     <h2>📚 Courses</h2>
 
     <div class="grid">
-
         <div class="card">HTML</div>
         <div class="card">CSS</div>
         <div class="card">JavaScript</div>
@@ -37,20 +33,15 @@
         <div class="card">Java</div>
         <div class="card">C++</div>
         <div class="card">Web Design</div>
-        <div class="card">App Development</div>
         <div class="card">Cyber Security</div>
-
     </div>
 </section>
 
-<!-- MEMBERSHIP -->
 <section class="membership">
     <h2>💎 Membership</h2>
-    <p>Join premium plan for advanced courses</p>
     <button>Join Now</button>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>© 2026 Skill Academy Pro</p>
 </footer>
@@ -60,4 +51,26 @@
     <h3>Login</h3>
     <input placeholder="Email">
     <input placeholder="Password" type="password">
-    <button>Submit
+    <button onclick="closeLogin()">Close</button>
+</div>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+}
+
+function openLogin() {
+    document.getElementById("loginBox").style.display = "block";
+}
+
+function closeLogin() {
+    document.getElementById("loginBox").style.display = "none";
+}
+
+function downloadApp() {
+    alert("Download will start soon 🚀");
+}
+</script>
+
+</body>
+</html>
