@@ -7,17 +7,62 @@
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-    <h3>🎓 Nano Digital Academy</h3>
-    <button onclick="toggleDark()">🌙</button>
-</div>
+<header>
+    <h2>🎓 Nano Digital Academy</h2>
+    <button onclick="toggleDark()">🌙 Dark Mode</button>
+</header>
 
-<!-- PAGES -->
-<div class="page" id="home">
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('courses')">Courses</button>
+    <button onclick="showPage('login')">Login</button>
+    <button onclick="showPage('settings')">Settings</button>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="page">
     <h1>Welcome 🚀</h1>
-    <p>Learn skills anytime, anywhere</p>
+    <p>Your learning journey starts here</p>
 </div>
 
-<div class="page" id="courses">
-    <h2>📚 Courses</h2
+<!-- COURSES -->
+<div id="courses" class="page" style="display:none;">
+    <h2>📚 Courses</h2>
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="page" style="display:none;">
+    <h2>Login</h2>
+    <input placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="msg"></p>
+</div>
+
+<!-- SETTINGS -->
+<div id="settings" class="page" style="display:none;">
+    <h2>Settings ⚙️</h2>
+    <p>Simple working version</p>
+</div>
+
+<script>
+function showPage(id){
+    let pages = document.querySelectorAll('.page');
+    pages.forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+
+function login(){
+    document.getElementById("msg").innerText = "🙏 Thank you for logging in!";
+}
+
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
