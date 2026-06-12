@@ -8,17 +8,18 @@ body {
 /* SIDEBAR */
 .sidebar {
     width: 200px;
+    height: 100vh;
     background: #1e3a8a;
     color: white;
-    height: 100vh;
     padding: 20px;
 }
 
 .sidebar button {
-    display: block;
     width: 100%;
     margin: 10px 0;
     padding: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 /* MAIN */
@@ -28,55 +29,13 @@ body {
     text-align: center;
 }
 
-/* HERO */
-.hero {
-    padding: 40px;
-    color: white;
-}
-
-/* GRID */
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
+/* CARDS */
 .card {
     background: white;
     padding: 15px;
-    width: 120px;
+    margin: 10px auto;
+    width: 150px;
     border-radius: 10px;
-}
-
-/* SECTION */
-.section {
-    margin: 30px 0;
-}
-
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    padding: 20px;
-}
-
-/* SETTINGS */
-.settings {
-    display: none;
-    position: fixed;
-    right: 10px;
-    top: 100px;
-    background: white;
-    padding: 10px;
-}
-
-.settings.show {
-    display: block;
 }
 
 /* POPUP */
@@ -90,21 +49,6 @@ body {
 
 .popup.show {
     display: block;
-}
-
-/* CHAT */
-.chat {
-    height: 100px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-}
-
-/* THANK YOU */
-.thankyou {
-    display: none;
-    background: lightgreen;
-    padding: 10px;
-    margin: 10px;
 }
 
 /* DARK MODE */
