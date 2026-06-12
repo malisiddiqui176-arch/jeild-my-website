@@ -63,30 +63,45 @@ function toggleDarkMode() {
 <script>
 let seconds = 0;
 let timerInterval;
+<h2>Study Timer ⏰</h2>
+
+<p id="timer">00:00</p>
+
+<button onclick="startTimer()">Start</button>
+<button onclick="stopTimer()">Stop</button>
+<button onclick="resetTimer()">Reset</button>
+
+<script>
+let seconds = 0;
+let timerInterval = null;
+
+function updateDisplay() {
+    let mins = Math.floor(seconds / 60);
+    let secs = seconds % 60;
+
+    mins = String(mins).padStart(2, '0');
+    secs = String(secs).padStart(2, '0');
+
+    document.getElementById("timer").innerText = mins + ":" + secs;
+}
 
 function startTimer() {
+    if (timerInterval !== null) return; // prevents multiple timers
+
     timerInterval = setInterval(function() {
         seconds++;
-        document.getElementById("timer").innerText = seconds + " seconds";
+        updateDisplay();
     }, 1000);
 }
 
 function stopTimer() {
     clearInterval(timerInterval);
+    timerInterval = null;
 }
 
 function resetTimer() {
-    clearInterval(timerInterval);
+    stopTimer();
     seconds = 0;
-    document.getElementById("timer").innerText = "0";
+    updateDisplay();
 }
 </script>
-</body>
-</html>
-<h2>Study Timer ⏰</h2>
-
-<p id="timer">0</p>
-
-<button onclick="startTimer()">Start</button>
-<button onclick="stopTimer()">Stop</button>
-<button onclick="resetTimer()">Reset</button>
