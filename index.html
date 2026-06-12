@@ -8,50 +8,56 @@
 
 <nav class="navbar">
     <h2>📘 Study Academy</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
-<div class="hero">
-    <h1>Welcome to Study Academy 📚</h1>
-    <p>Learn HTML, CSS and JavaScript easily.</p>
+<section class="hero">
+    <h1>Welcome to Study Academy 🚀</h1>
+    <p>Learn HTML, CSS and JavaScript step by step.</p>
 
-    <input type="text" id="searchBox" placeholder="Search a topic...">
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</section>
 
-    <br><br>
+<section id="about" class="section">
+    <h2>About Us</h2>
+    <p>Study Academy helps students learn web development in a simple way.</p>
+</section>
 
-    <button onclick="clearSearch()">Delete Search 🗑️</button>
-    <button onclick="toggleDarkMode()">Dark Mode 🌙</button>
-</div>
-
-<section class="courses">
+<section id="courses" class="section">
     <h2>Our Courses</h2>
 
     <div class="course-card">
         <h3>HTML</h3>
-        <p>Learn how to build web pages.</p>
+        <p>Build the structure of websites.</p>
     </div>
 
     <div class="course-card">
         <h3>CSS</h3>
-        <p>Learn how to design websites.</p>
+        <p>Design beautiful websites.</p>
     </div>
 
     <div class="course-card">
         <h3>JavaScript</h3>
-        <p>Learn how to make websites interactive.</p>
+        <p>Make websites interactive.</p>
     </div>
 </section>
 
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: studyacademy@example.com</p>
+</section>
+
 <footer>
-    <p>Thank You for Visiting 📖</p>
+    <p>📚 Thank You For Visiting Study Academy</p>
 </footer>
 
 <script>
 function toggleDarkMode() {
     document.body.classList.toggle("dark");
-}
-
-function clearSearch() {
-    document.getElementById("searchBox").value = "";
 }
 </script>
 
