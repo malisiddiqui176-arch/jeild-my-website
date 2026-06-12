@@ -1,32 +1,26 @@
 body {
     margin: 0;
     font-family: Arial;
-    display: flex;
     background: linear-gradient(135deg, #4facfe, #00f2fe);
+    text-align: center;
 }
 
-/* SIDEBAR */
-.sidebar {
-    width: 220px;
-    height: 100vh;
+/* HEADER */
+header {
     background: #1e3a8a;
     color: white;
-    padding: 20px;
+    padding: 15px;
 }
 
-.sidebar button {
-    width: 100%;
-    margin: 10px 0;
+/* NAV */
+nav {
+    margin: 10px;
+}
+
+button {
     padding: 10px;
-    border: none;
+    margin: 5px;
     cursor: pointer;
-}
-
-/* MAIN */
-.main {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
 }
 
 /* CARDS */
@@ -36,19 +30,6 @@ body {
     margin: 10px auto;
     width: 150px;
     border-radius: 10px;
-}
-
-/* POPUP */
-.popup {
-    display: none;
-    position: fixed;
-    bottom: 10px;
-    background: white;
-    padding: 10px;
-}
-
-.popup.show {
-    display: block;
 }
 
 /* DARK MODE */
