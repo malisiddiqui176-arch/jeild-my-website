@@ -63,5 +63,9 @@ footer {
 .dark .section,
 .dark .course-card {
     background: #222;
+    #timer {
+    font-size: 40px;
+    font-weight: bold;
+}
     color: white;
 }
