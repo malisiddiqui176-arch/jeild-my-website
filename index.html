@@ -1,107 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Study Academy</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<h2>📚 Study Planner</h2>
 
-<nav class="navbar">
-    <h2>📘 Study Academy</h2>
-    <div>
-        <a href="#about">About</a>
-        <a href="#courses">Courses</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
+<input id="taskInput" placeholder="Enter study task...">
+<button onclick="addTask()">Add Task</button>
 
-<section class="hero">
-    <h1>Welcome to Study Academy 🚀</h1>
-    <p>Learn HTML, CSS and JavaScript step by step.</p>
+<ul id="taskList"></ul>
 
-    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
-</section>
+<hr>
 
-<section id="about" class="section">
-    <h2>About Us</h2>
-    <p>Study Academy helps students learn web development in a simple way.</p>
-</section>
+<h2>📝 Notes Saver</h2>
 
-<section id="courses" class="section">
-    <h2>Our Courses</h2>
-
-    <div class="course-card">
-        <h3>HTML</h3>
-        <p>Build the structure of websites.</p>
-    </div>
-
-    <div class="course-card">
-        <h3>CSS</h3>
-        <p>Design beautiful websites.</p>
-    </div>
-
-    <div class="course-card">
-        <h3>JavaScript</h3>
-        <p>Make websites interactive.</p>
-    </div>
-</section>
-
-<section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: studyacademy@example.com</p>
-</section>
-
-<footer>
-    <p>📚 Thank You For Visiting Study Academy</p>
-</footer>
-
-<script>
-function toggleDarkMode() {
-    document.body.classList.toggle("dark");
-}
-</script>
-<script>
-let seconds = 0;
-let timerInterval;
-<h2>Study Timer ⏰</h2>
-
-<p id="timer">00:00</p>
-
-<button onclick="startTimer()">Start</button>
-<button onclick="stopTimer()">Stop</button>
-<button onclick="resetTimer()">Reset</button>
-
-<script>
-let seconds = 0;
-let timerInterval = null;
-
-function updateDisplay() {
-    let mins = Math.floor(seconds / 60);
-    let secs = seconds % 60;
-
-    mins = String(mins).padStart(2, '0');
-    secs = String(secs).padStart(2, '0');
-
-    document.getElementById("timer").innerText = mins + ":" + secs;
-}
-
-function startTimer() {
-    if (timerInterval !== null) return; // prevents multiple timers
-
-    timerInterval = setInterval(function() {
-        seconds++;
-        updateDisplay();
-    }, 1000);
-}
-
-function stopTimer() {
-    clearInterval(timerInterval);
-    timerInterval = null;
-}
-
-function resetTimer() {
-    stopTimer();
-    seconds = 0;
-    updateDisplay();
-}
-</script>
+<textarea id="notes" placeholder="Write your notes here..."></textarea>
+<br>
+<button onclick="saveNotes()">Save Notes 💾</button>
+<button onclick="clearNotes()">Clear Notes 🗑️</button>
