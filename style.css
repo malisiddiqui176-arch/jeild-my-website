@@ -1,71 +1,68 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    text-align: center;
-    transition: 0.3s;
+    font-family: Arial;
+    background: #f4f7ff;
 }
 
-.navbar {
+/* HEADER */
+header {
     background: #1e3a8a;
     color: white;
-    padding: 15px;
     display: flex;
     justify-content: space-between;
+    padding: 15px 30px;
+    align-items: center;
 }
 
-.navbar a {
+header nav a {
     color: white;
     text-decoration: none;
-    margin-left: 15px;
+    margin: 0 10px;
 }
 
+/* HERO */
 .hero {
+    text-align: center;
     padding: 80px 20px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
 }
 
-button {
-    padding: 10px 15px;
+.hero button {
+    padding: 10px 20px;
     border: none;
+    background: white;
+    color: #1e3a8a;
     border-radius: 8px;
-    background: #1e3a8a;
-    color: white;
     cursor: pointer;
 }
 
+/* SECTIONS */
 .section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* COURSE GRID */
+.grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card {
     background: white;
-    margin: 20px;
     padding: 20px;
-    border-radius: 12px;
-}
-
-.course-card {
-    background: #f4f4f4;
-    margin: 10px auto;
-    padding: 15px;
-    max-width: 300px;
+    width: 180px;
     border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
+/* FOOTER */
 footer {
     background: #1e3a8a;
     color: white;
+    text-align: center;
     padding: 15px;
-}
-
-/* Dark Mode */
-.dark {
-    background: #0f172a;
-    color: white;
-}
-
-.dark .section,
-.dark .course-card {
-    background: #222;
-    #timer {
-    font-size: 40px;
-    font-weight: bold;
-}
-    color: white;
 }
