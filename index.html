@@ -10,65 +10,117 @@
 <header>
     <h2>🎓 Skill Academy Pro</h2>
 
-    <div class="top-buttons">
-        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
-        <button onclick="openLogin()">Login</button>
-        <button onclick="downloadApp()">Download</button>
-    </div>
+    <button onclick="openSettings()">⚙️ Settings</button>
 </header>
 
-<section class="hero">
-    <h1>Learn Computer Skills Online 🚀</h1>
-    <p>HTML | CSS | JavaScript | Python | Cyber Security</p>
-</section>
-
-<section class="courses">
-    <h2>📚 Courses</h2>
-
-    <div class="grid">
-        <div class="card">HTML</div>
-        <div class="card">CSS</div>
-        <div class="card">JavaScript</div>
-        <div class="card">Python</div>
-        <div class="card">Java</div>
-        <div class="card">C++</div>
-        <div class="card">Web Design</div>
-        <div class="card">Cyber Security</div>
-    </div>
-</section>
-
-<section class="membership">
-    <h2>💎 Membership</h2>
-    <button>Join Now</button>
-</section>
-
-<footer>
-    <p>© 2026 Skill Academy Pro</p>
-</footer>
-
-<!-- LOGIN BOX -->
-<div id="loginBox" class="login">
+<!-- SIDE LOGIN -->
+<div class="login-panel" id="loginPanel">
     <h3>Login</h3>
     <input placeholder="Email">
-    <input placeholder="Password" type="password">
-    <button onclick="closeLogin()">Close</button>
+    <input type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <h1>Welcome to Skill Academy 🚀</h1>
+    <p>Learn Skills Anytime Anywhere</p>
+
+    <button onclick="showLoginMessage()">Login</button>
+
+</div>
+
+<!-- SETTINGS PANEL -->
+<div class="settings" id="settings">
+
+    <h3>Settings ⚙️</h3>
+
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <button onclick="showAbout()">ℹ️ About</button>
+
+    <button onclick="openInstructor()">👨‍🏫 Instructor Chat</button>
+
+    <button onclick="showHelp()">❓ Help</button>
+
+    <button onclick="showFees()">💰 Course Fees</button>
+
+</div>
+
+<!-- ABOUT -->
+<div class="box" id="aboutBox">
+    <h2>About Us</h2>
+    <p>
+        Welcome to Skill Academy, a platform dedicated to making learning simple, accessible, and affordable for everyone.
+
+        We provide high-quality online courses designed for students, beginners, and anyone who wants to build new skills.
+
+        Our courses are created with clear explanations and real-world practice.
+
+        Start learning today and build your future with us!
+    </p>
+</div>
+
+<!-- INSTRUCTOR CHAT -->
+<div class="box" id="chatBox">
+    <h2>Instructor Chat</h2>
+    <div id="chat"></div>
+    <input id="msg" placeholder="Type message...">
+    <button onclick="sendMsg()">Send</button>
+</div>
+
+<!-- FEES -->
+<div class="box" id="feesBox">
+    <h2>Course Fees 💰</h2>
+    <p>HTML: $10</p>
+    <p>CSS: $10</p>
+    <p>JavaScript: $20</p>
+    <p>Full Web Dev: $50</p>
+</div>
+
+<!-- LOGIN MESSAGE -->
+<div class="message" id="msgBox">
+    <h2>🙏 Thank you for logging in!</h2>
 </div>
 
 <script>
-function toggleDarkMode() {
+function toggleDarkMode(){
     document.body.classList.toggle("dark");
 }
 
-function openLogin() {
-    document.getElementById("loginBox").style.display = "block";
+function openSettings(){
+    document.getElementById("settings").classList.toggle("show");
 }
 
-function closeLogin() {
-    document.getElementById("loginBox").style.display = "none";
+function showAbout(){
+    document.getElementById("aboutBox").classList.toggle("show");
 }
 
-function downloadApp() {
-    alert("Download will start soon 🚀");
+function openInstructor(){
+    document.getElementById("chatBox").classList.toggle("show");
+}
+
+function showHelp(){
+    alert("Contact support: help@skillacademy.com");
+}
+
+function showFees(){
+    document.getElementById("feesBox").classList.toggle("show");
+}
+
+function login(){
+    document.getElementById("msgBox").style.display = "block";
+}
+
+function showLoginMessage(){
+    document.getElementById("msgBox").style.display = "block";
+}
+
+function sendMsg(){
+    let msg = document.getElementById("msg").value;
+    document.getElementById("chat").innerHTML += "<p>You: " + msg + "</p>";
+    document.getElementById("msg").value = "";
 }
 </script>
 
