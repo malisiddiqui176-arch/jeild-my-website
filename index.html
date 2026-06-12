@@ -1,157 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HQ Skill Academy</title>
+    <title>Skill Academy App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
+<!-- SIDEBAR (APP MENU) -->
 <div class="sidebar">
-    <h2>🎓 Academy</h2>
 
-    <button onclick="openLogin()">Login</button>
-    <button onclick="toggleDarkMode()">Dark Mode</button>
-    <button onclick="toggleSettings()">Settings</button>
+    <h2>🎓 Academy App</h2>
+
+    <button onclick="showHome()">🏠 Home</button>
+    <button onclick="showCourses()">📚 Courses</button>
+    <button onclick="showLogin()">🔐 Login</button>
+    <button onclick="showSettings()">⚙️ Settings</button>
+
 </div>
 
-<!-- MAIN -->
+<!-- MAIN SCREEN -->
 <div class="main">
 
-    <section class="hero">
-        <h1>Welcome to HQ Skill Academy 🚀</h1>
-        <p>Learn. Build. Grow. Become Professional Developer.</p>
-    </section>
+    <!-- HOME PAGE -->
+    <div id="home" class="page">
+        <h1>Welcome to Academy App 🚀</h1>
+        <p>Learn skills anytime anywhere</p>
+    </div>
 
-    <!-- COURSES -->
-    <section class="section">
+    <!-- COURSES PAGE -->
+    <div id="courses" class="page" style="display:none;">
         <h2>📚 Courses</h2>
 
-        <div class="grid">
-            <div class="card">HTML</div>
-            <div class="card">CSS</div>
-            <div class="card">JavaScript</div>
-            <div class="card">Python</div>
-            <div class="card">Java</div>
-            <div class="card">C++</div>
-            <div class="card">React</div>
-            <div class="card">Node.js</div>
-            <div class="card">Cyber Security</div>
-        </div>
-    </section>
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Python</div>
+        <div class="card">Cyber Security</div>
+        <div class="card">Web Design</div>
+    </div>
 
-    <!-- ABOUT -->
-    <section class="section">
-        <h2>About Us</h2>
-        <p>
-            Welcome to Skill Academy, a platform dedicated to making learning simple, accessible, and affordable for everyone.
-            We provide high-quality online courses with real-world examples and practice.
-            Learn anytime, anywhere at your own pace.
-        </p>
-    </section>
+    <!-- LOGIN PAGE -->
+    <div id="login" class="page" style="display:none;">
+        <h2>Login</h2>
 
-    <!-- FEES -->
-    <section class="section">
-        <h2>💰 Fees</h2>
-        <p>HTML - $10 | CSS - $10 | JS - $20 | Full Stack - $50</p>
-    </section>
+        <input placeholder="Email">
+        <input type="password" placeholder="Password">
 
-    <!-- CHAT -->
-    <section class="section">
-        <h2>👨‍🏫 Instructor Chat</h2>
+        <button onclick="login()">Login</button>
 
-        <div id="chatBox" class="chat"></div>
+        <h3 id="msg"></h3>
+    </div>
 
-        <input id="msg" placeholder="Type message...">
-        <button onclick="sendMsg()">Send</button>
-    </section>
+    <!-- SETTINGS PAGE -->
+    <div id="settings" class="page" style="display:none;">
+        <h2>⚙️ Settings</h2>
 
-</div>
-
-<!-- LOGIN MODAL -->
-<div id="login" class="modal">
-    <h2>Login</h2>
-    <input placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <button onclick="closeLogin()">Close</button>
-</div>
-
-<!-- SETTINGS -->
-<div id="settings" class="settings">
-
-    <h3>Settings ⚙️</h3>
-
-    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
-
-    <button onclick="showAbout()">ℹ️ About Info</button>
-
-    <button onclick="showHelp()">❓ Help</button>
-
-    <button onclick="showFees()">💰 Fees Info</button>
-
-    <button onclick="toggleChat()">💬 Chat</button>
+        <button onclick="toggleDark()">🌙 Dark Mode</button>
+        <button onclick="showAbout()">ℹ️ About</button>
+        <button onclick="showHelp()">❓ Help</button>
+        <button onclick="showFees()">💰 Fees</button>
+    </div>
 
 </div>
 
 <!-- ABOUT POPUP -->
 <div id="aboutBox" class="popup">
     <p>
-        Welcome to HQ Skill Academy, a platform dedicated to making learning simple, accessible, and affordable for everyone.
-        We provide high-quality online courses designed for students, beginners, and professionals.
+        Welcome to Skill Academy, a platform dedicated to making learning simple, accessible, and affordable for everyone.
     </p>
 </div>
 
-<!-- THANK YOU -->
-<div id="thankyou" class="thankyou">
-    <h2>🙏 Thank you for logging in!</h2>
-</div>
-
 <script>
-function openLogin(){
-    document.getElementById("login").style.display = "block";
+function showPage(id){
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(p => p.style.display = "none");
+    document.getElementById(id).style.display = "block";
 }
 
-function closeLogin(){
-    document.getElementById("login").style.display = "none";
-}
+// NAVIGATION
+function showHome(){ showPage("home"); }
+function showCourses(){ showPage("courses"); }
+function showLogin(){ showPage("login"); }
+function showSettings(){ showPage("settings"); }
 
+// LOGIN
 function login(){
-    document.getElementById("thankyou").style.display = "block";
-    closeLogin();
+    document.getElementById("msg").innerText = "🙏 Thank you for logging in!";
 }
 
-function toggleDarkMode(){
+// DARK MODE
+function toggleDark(){
     document.body.classList.toggle("dark");
 }
 
-function toggleSettings(){
-    document.getElementById("settings").classList.toggle("show");
-}
-
+// ABOUT
 function showAbout(){
     document.getElementById("aboutBox").classList.toggle("show");
 }
 
+// HELP
 function showHelp(){
-    alert("Contact: support@hqacademy.com");
+    alert("Help: contact support@academyapp.com");
 }
 
+// FEES
 function showFees(){
-    alert("HTML $10, CSS $10, JS $20, Full Stack $50");
-}
-
-function toggleChat(){
-    alert("Instructor chat activated");
-}
-
-function sendMsg(){
-    let msg = document.getElementById("msg").value;
-    if(msg === "") return;
-
-    document.getElementById("chatBox").innerHTML += "<p>You: " + msg + "</p>";
-    document.getElementById("msg").value = "";
+    alert("HTML $10 | CSS $10 | JS $20 | Full Course $50");
 }
 </script>
 
