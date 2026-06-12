@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial;
     background: linear-gradient(135deg, #4facfe, #00f2fe);
-    transition: 0.3s;
+    text-align: center;
 }
 
 /* HEADER */
@@ -14,63 +14,83 @@ header {
     justify-content: space-between;
 }
 
-/* LOGIN PANEL */
-.login-panel {
-    position: fixed;
-    left: 0;
-    top: 100px;
-    width: 200px;
-    background: white;
-    padding: 10px;
-}
-
 /* MAIN */
 .main {
-    text-align: center;
-    margin-top: 100px;
+    margin-top: 80px;
+}
+
+/* LOGIN */
+.login {
+    display: none;
+    position: fixed;
+    left: 20px;
+    top: 120px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 /* SETTINGS */
 .settings {
-    position: fixed;
-    right: 0;
-    top: 100px;
-    width: 200px;
-    background: white;
-    padding: 10px;
     display: none;
+    position: fixed;
+    right: 20px;
+    top: 120px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .settings.show {
     display: block;
 }
 
-/* BOXES */
+/* BOX */
 .box {
     display: none;
     background: white;
     margin: 20px;
     padding: 20px;
+    border-radius: 10px;
 }
 
-/* MESSAGE */
-.message {
+.box.show {
+    display: block;
+}
+
+/* THANK YOU */
+.thankyou {
     display: none;
-    background: #d1fae5;
+    background: lightgreen;
+    margin: 20px;
     padding: 20px;
-    text-align: center;
+    border-radius: 10px;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
 }
 
 /* CHAT */
 #chat {
     height: 100px;
     overflow-y: auto;
-    border: 1px solid #ccc;
+    border: 1px solid gray;
     margin-bottom: 10px;
 }
 
 /* DARK MODE */
 .dark {
     background: #0f172a;
+    color: white;
+}
+
+.dark .box,
+.dark .login,
+.dark .settings {
+    background: #1f2937;
     color: white;
 }
