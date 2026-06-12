@@ -2,48 +2,79 @@ body {
     margin: 0;
     font-family: Arial;
     background: linear-gradient(135deg, #4facfe, #00f2fe);
-    color: white;
     text-align: center;
+    transition: 0.3s;
 }
 
 /* HEADER */
 header {
     background: #1e3a8a;
-    padding: 20px;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-buttons button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
 }
 
 /* HERO */
 .hero {
-    padding: 80px 20px;
-}
-
-/* BUTTON */
-button {
-    padding: 10px 20px;
-    border: none;
-    background: white;
-    color: #1e3a8a;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 60px;
+    color: white;
 }
 
 /* COURSES */
-.courses {
-    padding: 40px;
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .card {
     background: white;
-    color: black;
-    padding: 20px;
-    margin: 10px auto;
-    width: 200px;
+    padding: 15px;
+    width: 120px;
     border-radius: 10px;
+}
+
+/* MEMBERSHIP */
+.membership {
+    margin: 40px;
 }
 
 /* FOOTER */
 footer {
     background: #1e3a8a;
-    padding: 15px;
-    margin-top: 40px;
+    color: white;
+    padding: 10px;
+}
+
+/* LOGIN BOX */
+.login {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* DARK MODE */
+.dark {
+    background: #0f172a;
+    color: white;
+}
+
+.dark .card {
+    background: #222;
+    color: white;
 }
