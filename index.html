@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SkillCare Academy</title>
+    <title>Skill Academy Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- TOP BAR -->
 <header>
-    <h1>🎓 SkillCare Academy</h1>
+    <h2>🎓 Skill Academy Pro</h2>
+
+    <div class="top-buttons">
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        <button onclick="openLogin()">Login</button>
+        <button onclick="downloadApp()">Download</button>
+    </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-    <h2>Learn Skills That Change Your Future 🚀</h2>
-    <p>Web Development | Programming | Design</p>
-    <button>Start Learning</button>
+    <h1>Learn Computer Skills Online 🚀</h1>
+    <p>Become a Developer | Designer | Programmer</p>
 </section>
 
+<!-- COURSES -->
 <section class="courses">
-    <h2>Courses 📚</h2>
+    <h2>📚 Courses</h2>
 
-    <div class="card">HTML Basics</div>
-    <div class="card">CSS Design</div>
-    <div class="card">JavaScript</div>
+    <div class="grid">
+
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Python</div>
+        <div class="card">Java</div>
+        <div class="card">C++</div>
+        <div class="card">Web Design</div>
+        <div class="card">App Development</div>
+        <div class="card">Cyber Security</div>
+
+    </div>
 </section>
 
+<!-- MEMBERSHIP -->
+<section class="membership">
+    <h2>💎 Membership</h2>
+    <p>Join premium plan for advanced courses</p>
+    <button>Join Now</button>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    <p>© SkillCare Academy</p>
+    <p>© 2026 Skill Academy Pro</p>
 </footer>
 
-</body>
-</html>
+<!-- LOGIN BOX -->
+<div id="loginBox" class="login">
+    <h3>Login</h3>
+    <input placeholder="Email">
+    <input placeholder="Password" type="password">
+    <button>Submit
