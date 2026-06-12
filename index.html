@@ -1,22 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <nav class="navbar">
     <h2>📘 Study Academy</h2>
 </nav>
 
 <div class="hero">
-
-    <h1>Study Academy 📚</h1>
+    <h1>Welcome to Study Academy 📚</h1>
+    <p>Learn HTML, CSS and JavaScript easily.</p>
 
     <input type="text" id="searchBox" placeholder="Search a topic...">
 
-    <button onclick="clearSearch()">Delete Search 🗑️</button>
-
     <br><br>
 
-    <button onclick="toggleDarkMode()">Dark Mode On/Off 🌙</button>
-
-    <p>Learn anything related to study and education.</p>
-
+    <button onclick="clearSearch()">Delete Search 🗑️</button>
+    <button onclick="toggleDarkMode()">Dark Mode 🌙</button>
 </div>
+
+<section class="courses">
+    <h2>Our Courses</h2>
+
+    <div class="course-card">
+        <h3>HTML</h3>
+        <p>Learn how to build web pages.</p>
+    </div>
+
+    <div class="course-card">
+        <h3>CSS</h3>
+        <p>Learn how to design websites.</p>
+    </div>
+
+    <div class="course-card">
+        <h3>JavaScript</h3>
+        <p>Learn how to make websites interactive.</p>
+    </div>
+</section>
 
 <footer>
     <p>Thank You for Visiting 📖</p>
@@ -31,3 +54,6 @@ function clearSearch() {
     document.getElementById("searchBox").value = "";
 }
 </script>
+
+</body>
+</html>
