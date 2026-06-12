@@ -60,7 +60,27 @@ function toggleDarkMode() {
     document.body.classList.toggle("dark");
 }
 </script>
+<script>
+let seconds = 0;
+let timerInterval;
 
+function startTimer() {
+    timerInterval = setInterval(function() {
+        seconds++;
+        document.getElementById("timer").innerText = seconds + " seconds";
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    seconds = 0;
+    document.getElementById("timer").innerText = "0";
+}
+</script>
 </body>
 </html>
 <h2>Study Timer ⏰</h2>
