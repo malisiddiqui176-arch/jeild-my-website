@@ -13,3 +13,39 @@
 <br>
 <button onclick="saveNotes()">Save Notes 💾</button>
 <button onclick="clearNotes()">Clear Notes 🗑️</button>
+<script>
+// -------- STUDY PLANNER --------
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let taskText = input.value;
+
+    if (taskText === "") return;
+
+    let li = document.createElement("li");
+    li.innerHTML = taskText + " <button onclick='this.parentElement.remove()'>❌</button>";
+
+    document.getElementById("taskList").appendChild(li);
+
+    input.value = "";
+}
+
+// -------- NOTES SAVER --------
+function saveNotes() {
+    let notes = document.getElementById("notes").value;
+    localStorage.setItem("studyNotes", notes);
+    alert("Notes Saved 💾");
+}
+
+function clearNotes() {
+    document.getElementById("notes").value = "";
+    localStorage.removeItem("studyNotes");
+}
+
+// Load saved notes
+window.onload = function() {
+    let saved = localStorage.getItem("studyNotes");
+    if (saved) {
+        document.getElementById("notes").value = saved;
+    }
+}
+</script>
