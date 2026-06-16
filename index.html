@@ -1,115 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Nano Digital Academy</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nano Digital Academy Pro</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#050816;
+    color:white;
+}
+
+/* HEADER */
+header{
+    background:#0b1020;
+    border-bottom:2px solid #00cfff;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#00cfff;
+    font-size:24px;
+    font-weight:bold;
+}
+
+header button{
+    background:#00cfff;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* NAVIGATION */
+nav{
+    background:#111827;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:10px;
+}
+
+nav button{
+    margin:5px;
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    background:#00cfff;
+    cursor:pointer;
+}
+
+/* PAGE SYSTEM */
+.page{
+    display:none;
+    padding:30px;
+}
+
+.active{
+    display:block;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    color:#00cfff;
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.hero button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#00cfff;
+    cursor:pointer;
+}
+
+/* CARDS */
+.card{
+    background:#111827;
+    border:1px solid #00cfff;
+    border-radius:12px;
+    padding:20px;
+    margin:10px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+/* INPUTS */
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:8px;
+    border:none;
+}
+
+textarea{
+    height:120px;
+}
+
+/* DARK/LIGHT MODE */
+.light{
+    background:#f5f5f5;
+    color:black;
+}
+
+.light .card{
+    background:white;
+    color:black;
+}
+
+.light header{
+    background:white;
+}
+
+.light nav{
+    background:#ddd;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h2>🎓 Nano Digital Academy</h2>
-    <button onclick="toggleDark()">🌙 Dark Mode</button>
+
+<div class="logo">
+🎓 Nano Digital Academy
+</div>
+
+<button onclick="toggleTheme()">
+🌙 Theme
+</button>
+
 </header>
 
 <nav>
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('courses')">Courses</button>
-    <button onclick="showPage('login')">Login</button>
-    <button onclick="showPage('settings')">Settings</button>
+
+<button onclick="showPage('home')">🏠 Home</button>
+
+<button onclick="showPage('courses')">📚 Courses</button>
+
+<button onclick="showPage('dashboard')">📊 Dashboard</button>
+
+<button onclick="showPage('quiz')">🎯 Quiz</button>
+
+<button onclick="showPage('notes')">📝 Notes</button>
+
+<button onclick="showPage('planner')">📅 Planner</button>
+
+<button onclick="showPage('login')">🔐 Login</button>
+
+<button onclick="showPage('settings')">⚙️ Settings</button>
+
 </nav>
 
-<!-- HOME -->
-<div id="home" class="page">
-    <h1>Welcome 🚀</h1>
-    <p>Your learning journey starts here</p>
-</div>
+<!-- HOME PAGE -->
+<div id="home" class="page active">
 
-<!-- COURSES -->
-<div id="courses" class="page" style="display:none;">
-    <h2>📚 Courses</h2>
-    <div class="card">HTML</div>
-    <div class="card">CSS</div>
-    <div class="card">JavaScript</div>
-</div>
+<div class="hero">
 
-<!-- LOGIN -->
-<div id="login" class="page" style="display:none;">
-    <h2>Login</h2>
-    <input placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p id="msg"></p>
-</div>
+<h1>Welcome to Nano Digital Academy</h1>
 
-<!-- SETTINGS -->
-<div id="settings" class="page" style="display:none;">
-    <h2>Settings ⚙️</h2>
-    <p>Simple working version</p>
-</div>
+<p>
+Learn Digital Skills. Build Your Future.
+</p>
 
-<script>
-function showPage(id){
-    let pages = document.querySelectorAll('.page');
-    pages.forEach(p => p.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-}
-
-function login(){
-    document.getElementById("msg").innerText = "🙏 Thank you for logging in!";
-}
-
-function toggleDark(){
-    document.body.classList.toggle("dark");
-}
-</script
-    <h1>Welcome to Nano Digital Academy</h1>
-<p>Learn Digital Skills. Build Your Future.</p>
-<button>Explore Courses</button>
-    Home | Courses | Login | Dashboard | Settings
-
-</body>
-</html>
-<nav>
-    <button onclick="showPage('home')">🏠 Home</button>
-    <button onclick="showPage('courses')">📚 Courses</button>
-    <button onclick="showPage('dashboard')">📊 Dashboard</button>
-    <button onclick="showPage('quiz')">🎯 Quiz</button>
-    <button onclick="showPage('notes')">📝 Notes</button>
-    <button onclick="showPage('planner')">📅 Planner</button>
-    <button onclick="showPage('login')">🔐 Login</button>
-    <button onclick="showPage('settings')">⚙️ Settings</button>
-</nav>
-<script>
-function correct(){
-    document.getElementById("quizResult").innerText = "✅ Correct
-<div id="home" class="page">
-    <div class="hero">
-        <h1>🎓 Nano Digital Academy</h1>
-        <p>Learn Digital Skills. Build Your Future.</p>
-
-        <button onclick="showPage('courses')">
-            Explore Courses
-        </button>
-    </div>
-</div>
-    <div class="stats">
-
-    <div class="card">
-        👨‍🎓 500+ Students
-    </div>
-
-    <div class="card">
-        📚 9 Courses
-    </div>
-
-    <div class="card">
-        🏆 100+ Certificates
-    </div>
+<button onclick="showPage('courses')">
+Explore Courses
+</button>
 
 </div>
-    <div class="card">
-    <h3>HTML Fundamentals</h3>
-    <p>Beginner Level</p>
-    <p>Fee: $10</p>
+
+<div class="grid">
+
+<div class="card">
+👨‍🎓 500+ Students
+</div>
+
+<div class="card">
+📚 9 Courses
+</div>
+
+<div class="card">
+🏆 100+ Certificates
+</div>
+
+<div class="card">
+⭐ 4.8 Rating
+</div>
+
+</div>
+
+</div>
+
+<!-- COURSES PAGE -->
+<div id="courses" class="page">
+
+<h2>📚 Courses</h2>
+
+<br>
+
+<div class="grid">
+
+<div class="card">
+<h3>HTML Fundamentals</h3>
+<p>Beginner Level</p>
+<p>Fee: $10</p>
+</div>
+
+<div class="card">
+<h3>CSS Mastery</h3>
+<p>Beginner Level</p>
+<p>Fee: $10</p>
+</div>
+
+<div class="card">
+<h3>JavaScript Essentials</h3>
+<p>Intermediate</p>
+<p>Fee: $20</p>
+</div>
+
+<div class="card">
+<h3>Python Programming</h3>
+<p>Intermediate</p>
+<p>Fee: $25</p>
+</div>
+
+</div>
+
 </div>
