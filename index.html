@@ -258,3 +258,271 @@ Explore Courses
 </div>
 
 </div>
+<!-- DASHBOARD PAGE -->
+<div id="dashboard" class="page">
+
+<h2>📊 Student Dashboard</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>📚 Courses Enrolled</h3>
+<p>3</p>
+</div>
+
+<div class="card">
+<h3>🏆 Completed Courses</h3>
+<p>1</p>
+</div>
+
+<div class="card">
+<h3>📈 Progress</h3>
+<p>35%</p>
+</div>
+
+<div class="card">
+<h3>🎯 Quiz Score</h3>
+<p>8 / 10</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUIZ PAGE -->
+<div id="quiz" class="page">
+
+<h2>🎯 Quick Quiz</h2>
+
+<div class="card">
+
+<p>What does HTML stand for?</p>
+
+<button onclick="quizAnswer(true)">
+Hyper Text Markup Language
+</button>
+
+<button onclick="quizAnswer(false)">
+Home Tool Markup Language
+</button>
+
+<p id="quizResult"></p>
+
+</div>
+
+</div>
+
+<!-- NOTES PAGE -->
+<div id="notes" class="page">
+
+<h2>📝 Notes Saver</h2>
+
+<textarea id="notesBox"
+placeholder="Write your notes here..."></textarea>
+
+<button onclick="saveNotes()">
+💾 Save Notes
+</button>
+
+<p id="notesMsg"></p>
+
+</div>
+
+<!-- STUDY PLANNER -->
+<div id="planner" class="page">
+
+<h2>📅 Study Planner</h2>
+
+<input
+id="taskInput"
+placeholder="Enter study task">
+
+<button onclick="addTask()">
+➕ Add Task
+</button>
+
+<ul id="taskList"></ul>
+
+</div>
+
+<!-- LOGIN PAGE -->
+<div id="login" class="page">
+
+<h2>🔐 Login</h2>
+
+<input
+placeholder="Email">
+
+<input
+type="password"
+placeholder="Password">
+
+<button onclick="loginUser()">
+Login
+</button>
+
+<p id="loginMsg"></p>
+
+</div>
+
+<!-- SETTINGS PAGE -->
+<div id="settings" class="page">
+
+<h2>⚙️ Settings</h2>
+
+<div class="card">
+<button onclick="toggleTheme()">
+🌙 Toggle Theme
+</button>
+</div>
+
+<div class="card">
+<h3>ℹ️ About</h3>
+
+<p>
+Welcome to Nano Digital Academy,
+a platform dedicated to making learning
+simple, accessible, and affordable
+for everyone.
+</p>
+</div>
+
+<div class="card">
+<h3>💰 Course Fees</h3>
+
+<p>
+HTML $10<br>
+CSS $10<br>
+JavaScript $20<br>
+Python $25
+</p>
+</div>
+
+<div class="card">
+<h3>❓ Help</h3>
+
+<p>
+Contact support:
+support@nanodigitalacademy.com
+</p>
+</div>
+
+</div>
+
+<footer
+style="text-align:center;
+padding:20px;
+margin-top:30px;
+border-top:1px solid #00cfff;">
+
+© 2026 Nano Digital Academy
+
+</footer>
+
+<script>
+
+function showPage(id){
+
+let pages =
+document.querySelectorAll(".page");
+
+pages.forEach(page=>{
+page.classList.remove("active");
+});
+
+document
+.getElementById(id)
+.classList.add("active");
+
+}
+
+function toggleTheme(){
+
+document.body
+.classList.toggle("light");
+
+}
+
+function loginUser(){
+
+document
+.getElementById("loginMsg")
+.innerText =
+"🙏 Thank you for logging in!";
+
+}
+
+function quizAnswer(correct){
+
+document
+.getElementById("quizResult")
+.innerText =
+correct ?
+"✅ Correct!" :
+"❌ Wrong!";
+
+}
+
+function saveNotes(){
+
+let notes =
+document
+.getElementById("notesBox")
+.value;
+
+localStorage.setItem(
+"nanoNotes",
+notes
+);
+
+document
+.getElementById("notesMsg")
+.innerText =
+"✅ Notes Saved";
+
+}
+
+window.onload = function(){
+
+let saved =
+localStorage.getItem(
+"nanoNotes"
+);
+
+if(saved){
+
+document
+.getElementById("notesBox")
+.value = saved;
+
+}
+
+};
+
+function addTask(){
+
+let input =
+document
+.getElementById("taskInput");
+
+if(input.value.trim() === "")
+return;
+
+let li =
+document.createElement("li");
+
+li.innerText =
+input.value;
+
+document
+.getElementById("taskList")
+.appendChild(li);
+
+input.value = "";
+
+}
+
+</script>
+
+</body>
+</html>
