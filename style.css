@@ -42,3 +42,24 @@ button {
     background: #1f2937;
     color: white;
 }
+.dark header{
+    background:#111827;
+}
+
+.dark nav{
+    background:#1f2937;
+    padding:10px;
+}
+
+.dark button{
+    background:#374151;
+    color:white;
+}
+.page{
+    max-width:900px;
+    margin:auto;
+}
+
+.hero{
+    padding:60px 20px;
+}
