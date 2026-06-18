@@ -1,6 +1,12 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
 body{
     margin:0;
-    font-family:Arial,sans-serif;
     background:#050816;
     color:white;
 }
@@ -39,6 +45,7 @@ nav button{
     color:black;
     cursor:pointer;
     font-weight:bold;
+    transition:0.3s;
 }
 
 nav button:hover{
@@ -69,6 +76,14 @@ nav button:hover{
 
 .hero p{
     font-size:20px;
+    margin-bottom:20px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 /* GRID */
@@ -85,11 +100,45 @@ nav button:hover{
     border:1px solid #00cfff;
     border-radius:12px;
     padding:20px;
+    margin:10px;
     transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-5px);
+}
+
+/* BUTTONS */
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#00cfff;
+    color:black;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    opacity:0.9;
+    transform:scale(1.03);
+}
+
+/* PROGRESS BAR */
+.progress{
+    width:100%;
+    height:10px;
+    background:#333;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.progress-fill{
+    width:35%;
+    height:100%;
+    background:#00cfff;
+    border-radius:10px;
 }
 
 /* INPUTS */
@@ -104,18 +153,8 @@ textarea{
     border-radius:8px;
 }
 
-/* BUTTONS */
-button{
-    padding:10px 20px;
-    border:none;
-    border-radius:8px;
-    background:#00cfff;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-button:hover{
-    opacity:0.9;
+textarea{
+    height:120px;
 }
 
 /* STUDY PLANNER */
@@ -162,5 +201,9 @@ footer{
 
 .light li{
     background:white;
+    color:black;
+}
+
+.light button{
     color:black;
 }
