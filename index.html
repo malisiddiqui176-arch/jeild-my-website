@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>   
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="UzgPgNfRsKNepRWnvcsJhyxE1Yu4m-i61A__m-4sKpY" />
 <title>Nano Digital Academy Pro</title>
-    <style>
+
+<style>
 *{
     margin:0;
     padding:0;
@@ -73,18 +74,25 @@ nav button{
 /* HERO */
 .hero{
     text-align:center;
-    padding:80px 20px;
+    padding:100px 20px;
 }
 
 .hero h1{
     color:#00cfff;
-    font-size:50px;
+    font-size:60px;
     margin-bottom:15px;
 }
 
 .hero p{
-    font-size:20px;
+    font-size:22px;
     margin-bottom:20px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .hero button{
@@ -109,6 +117,22 @@ nav button{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
+}
+
+/* PROGRESS BAR */
+.progress{
+    width:100%;
+    height:10px;
+    background:#333;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.progress-fill{
+    width:35%;
+    height:100%;
+    background:#00cfff;
+    border-radius:10px;
 }
 
 /* INPUTS */
@@ -143,7 +167,6 @@ textarea{
 .light nav{
     background:#ddd;
 }
-
 </style>
 </head>
 
@@ -152,7 +175,7 @@ textarea{
 <header>
 
 <div class="logo">
-Nano Digital Academy 
+Nano Digital Academy
 </div>
 
 <button onclick="toggleTheme()">
@@ -162,23 +185,14 @@ Nano Digital Academy
 </header>
 
 <nav>
-
 <button onclick="showPage('home')">🏠 Home</button>
-
 <button onclick="showPage('courses')">📚 Courses</button>
-
 <button onclick="showPage('dashboard')">📊 Dashboard</button>
-
 <button onclick="showPage('quiz')">🎯 Quiz</button>
-
 <button onclick="showPage('notes')">📝 Notes</button>
-
 <button onclick="showPage('planner')">📅 Planner</button>
-
 <button onclick="showPage('login')">🔐 Login</button>
-
 <button onclick="showPage('settings')">⚙️ Settings</button>
-
 </nav>
 
 <!-- HOME PAGE -->
@@ -186,15 +200,23 @@ Nano Digital Academy
 
 <div class="hero">
 
-<h1>Welcome to Nano Digital Academy</h1>
+<h1>🚀 Nano Digital Academy</h1>
 
 <p>
 Learn Digital Skills. Build Your Future.
 </p>
 
+<div class="hero-buttons">
+
 <button onclick="showPage('courses')">
-Explore Courses
+📚 Explore Courses
 </button>
+
+<button onclick="showPage('login')">
+🚀 Join Now
+</button>
+
+</div>
 
 </div>
 
@@ -219,7 +241,6 @@ Explore Courses
 </div>
 
 </div>
-
 <!-- COURSES PAGE -->
 <div id="courses" class="page">
 
@@ -232,36 +253,47 @@ Explore Courses
 <div class="card">
 <h3>HTML Fundamentals</h3>
 <p>Beginner Level</p>
-<p>Fee: $10</p>
+<p>Duration: 4 Weeks</p>
+<button>Enroll Now</button>
 </div>
 
 <div class="card">
 <h3>CSS Mastery</h3>
 <p>Beginner Level</p>
-<p>Fee: $10</p>
+<p>Duration: 4 Weeks</p>
+<button>Enroll Now</button>
 </div>
 
 <div class="card">
 <h3>JavaScript Essentials</h3>
-<p>Intermediate</p>
-<p>Fee: $20</p>
+<p>Intermediate Level</p>
+<p>Duration: 6 Weeks</p>
+<button>Enroll Now</button>
 </div>
 
 <div class="card">
 <h3>Python Programming</h3>
-<p>Intermediate</p>
-<p>Fee: $25</p>
+<p>Intermediate Level</p>
+<p>Duration: 8 Weeks</p>
+<button>Enroll Now</button>
 </div>
 
 </div>
 
 </div>
+
 <!-- DASHBOARD PAGE -->
 <div id="dashboard" class="page">
 
 <h2>📊 Student Dashboard</h2>
 
 <div class="grid">
+
+<div class="card">
+<h3>👤 Student Profile</h3>
+<p>Name: Student</p>
+<p>Level: Beginner</p>
+</div>
 
 <div class="card">
 <h3>📚 Courses Enrolled</h3>
@@ -275,7 +307,13 @@ Explore Courses
 
 <div class="card">
 <h3>📈 Progress</h3>
-<p>35%</p>
+
+<div class="progress">
+<div class="progress-fill"></div>
+</div>
+
+<p>35% Complete</p>
+
 </div>
 
 <div class="card">
@@ -286,241 +324,3 @@ Explore Courses
 </div>
 
 </div>
-
-<!-- QUIZ PAGE -->
-<div id="quiz" class="page">
-
-<h2>🎯 Quick Quiz</h2>
-
-<div class="card">
-
-<p>What does HTML stand for?</p>
-
-<button onclick="quizAnswer(true)">
-Hyper Text Markup Language
-</button>
-
-<button onclick="quizAnswer(false)">
-Home Tool Markup Language
-</button>
-
-<p id="quizResult"></p>
-
-</div>
-
-</div>
-
-<!-- NOTES PAGE -->
-<div id="notes" class="page">
-
-<h2>📝 Notes Saver</h2>
-
-<textarea id="notesBox"
-placeholder="Write your notes here..."></textarea>
-
-<button onclick="saveNotes()">
-💾 Save Notes
-</button>
-
-<p id="notesMsg"></p>
-
-</div>
-
-<!-- STUDY PLANNER -->
-<div id="planner" class="page">
-
-<h2>📅 Study Planner</h2>
-
-<input
-id="taskInput"
-placeholder="Enter study task">
-
-<button onclick="addTask()">
-➕ Add Task
-</button>
-
-<ul id="taskList"></ul>
-
-</div>
-
-<!-- LOGIN PAGE -->
-<div id="login" class="page">
-
-<h2>🔐 Login</h2>
-
-<input
-placeholder="Email">
-
-<input
-type="password"
-placeholder="Password">
-
-<button onclick="loginUser()">
-Login
-</button>
-
-<p id="loginMsg"></p>
-
-</div>
-
-<!-- SETTINGS PAGE -->
-<div id="settings" class="page">
-
-<h2>⚙️ Settings</h2>
-
-<div class="card">
-<button onclick="toggleTheme()">
-🌙 Toggle Theme
-</button>
-</div>
-
-<div class="card">
-<h3>ℹ️ About</h3>
-
-<p>
-Welcome to Nano Digital Academy,
-a platform dedicated to making learning
-simple, accessible, and affordable
-for everyone.
-</p>
-</div>
-
-<div class="card">
-<h3>💰 Course Fees</h3>
-
-<p>
-HTML $10<br>
-CSS $10<br>
-JavaScript $20<br>
-Python $25
-</p>
-</div>
-
-<div class="card">
-<h3>❓ Help</h3>
-
-<p>
-Contact support:
-support@nanodigitalacademy.com
-</p>
-</div>
-
-</div>
-
-<footer
-style="text-align:center;
-padding:20px;
-margin-top:30px;
-border-top:1px solid #00cfff;">
-
-© 2026 Nano Digital Academy
-
-</footer>
-
-<script>
-
-function showPage(id){
-
-let pages =
-document.querySelectorAll(".page");
-
-pages.forEach(page=>{
-page.classList.remove("active");
-});
-
-document
-.getElementById(id)
-.classList.add("active");
-
-}
-
-function toggleTheme(){
-
-document.body
-.classList.toggle("light");
-
-}
-
-function loginUser(){
-
-document
-.getElementById("loginMsg")
-.innerText =
-"🙏 Thank you for logging in!";
-
-}
-
-function quizAnswer(correct){
-
-document
-.getElementById("quizResult")
-.innerText =
-correct ?
-"✅ Correct!" :
-"❌ Wrong!";
-
-}
-
-function saveNotes(){
-
-let notes =
-document
-.getElementById("notesBox")
-.value;
-
-localStorage.setItem(
-"nanoNotes",
-notes
-);
-
-document
-.getElementById("notesMsg")
-.innerText =
-"✅ Notes Saved";
-
-}
-
-window.onload = function(){
-
-let saved =
-localStorage.getItem(
-"nanoNotes"
-);
-
-if(saved){
-
-document
-.getElementById("notesBox")
-.value = saved;
-
-}
-
-};
-
-function addTask(){
-
-let input =
-document
-.getElementById("taskInput");
-
-if(input.value.trim() === "")
-return;
-
-let li =
-document.createElement("li");
-
-li.innerText =
-input.value;
-
-document
-.getElementById("taskList")
-.appendChild(li);
-
-input.value = "";
-
-}
-
-</script>
-
-</body>
-</html>
